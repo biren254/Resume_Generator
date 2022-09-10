@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bootstrap.bundle.js" async></script>
+    <title>Resume Generator</title>
+</head>
+
+<body class="bg-dark">
+    <!-- resume Form -->
+    <h1 class="text-center text-white p-2 fst-italic Bree heads">RESUME GENERATOR</h1>
+    <div class="container" id="resume-form">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Personal Details section -->
+                <h3 class="text-white mt-4 Bree">Personal Details</h3>
+                <div class="form-group text-white">
+                    <label for="nameField" class="ms-3 Roboto mb-1">Your Name*</label>
+                    <input type="text" id="nameField" placeholder="Enter here"
+                        class="form-control bg-dark rounded-pill text-white" />
+                </div>
+
+                <!-- Contact section -->
+                <div class="form-group text-white mt-2">
+                    <label for="contactField" class="ms-3 Roboto mb-1">Your Contact*</label>
+                    <input type="text" id="contactField" placeholder="Enter here"
+                        class="form-control bg-dark rounded-pill text-white" />
+                </div>
+
+                <!-- Email section -->
+                <div class="form-group text-white mt-2">
+                    <label for="emailField" class="ms-3 Roboto fst-italic mb-1">Your Email*</label>
+                    <input type="email" id="emailField" placeholder="Enter here"
+                        class="form-control bg-dark rounded-pill text-white" />
+                </div>
+
+                <!-- Address section -->
+                <div class="form-group text-white mt-2">
+                    <label for="addressField" class="ms-3 Roboto fst-italic mb-1">Your Address*</label>
+                    <textarea id="addressField" rows="4" placeholder="Enter here"
+                        class="form-control bg-dark rounded-3 text-white"></textarea>
+                </div>
+
+                <!-- photo section -->
+                <div class="form-group mt-3">
+                    <label for="" class="ms-3 Roboto fst-italic mb-1 text-white">Select your photo</label>
+                    <input id="imgField" type="file" class="form-control bg-dark text-white" />
+                </div>
+
+
+                <!-- links section -->
+                <h5 class="text-white my-3 fst-italic">Your Links</h5>
+
+                <div class="form-group">
+                    <label for="linkedField" class="ms-3 Roboto fst-italic text-white mb-1">LinkedIn</label>
+                    <input type="text" id="linkedField" placeholder="Enter here"
+                        class="form-control bg-dark rounded-pill text-white" />
+                </div>
+                <div class="form-group mt-2">
+                    <label for="githubField" class="ms-3 Roboto fst-italic text-white mb-1">GitHub</label>
+                    <input type="text" id="gitField" placeholder="Enter here"
+                        class="form-control bg-dark rounded-pill text-white" />
+                </div>
+
+
+                <!-- Languages section -->
+                <h5 class="text-white my-3 fst-italic"> Languages</h5>
+
+                <div class="form-group text-white" id="languages">
+                    <label for="languageField" class="ms-3 Roboto mb-1">Languages</label>
+                    <textarea type="text" id="languageField" placeholder="Enter here"
+                        class="form-control lField bg-dark rounded-pill text-white" rows="1"></textarea>
+
+                    <div class="container text-center mt-2" id="lAddButton">
+                        <button onclick="addNewlField()" class="btn btn-success btn-sm">
+                            Add more
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Pofessional Details section -->
+            <div class="col-md-6">
+                <h3 class="text-white mt-4 Bree">Pofessional Details</h3>
+
+                <!-- Job Title section -->
+                <div class="form-group text-white">
+                    <label for="jtitleField" class="ms-3 Roboto mb-1">Job Title</label>
+                    <input type="text" id="jtitleField" placeholder="Enter here"
+                        class="form-control bg-dark rounded-pill text-white" />
+                </div>
+
+                <!-- Objective section -->
+                <div class="form-group mt-2">
+                    <label for="" class="ms-3 Roboto fst-italic text-white mb-1">Objective</label>
+                    <textarea id="objectiveField" rows="5" placeholder="Enter here"
+                        class="form-control bg-dark rounded-3 text-white"></textarea>
+                </div>
+
+
+                <!-- Skills section -->
+                <div class="form-group text-white mt-2" id="skill">
+                    <label for="skillField" class="ms-3 Roboto mb-1">Skills</label>
+                    <textarea type="text" id="skillField" placeholder="Enter here"
+                        class="form-control sField bg-dark rounded-pill text-white" rows="1"></textarea>
+
+                    <div class="container text-center mt-2" id="sAddButton">
+                        <button onclick="addNewsField()" class="btn btn-success btn-sm">
+                            Add more
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projects section -->
+                <div class="form-group text-white mt-2" id="pf">
+                    <label for="" class="ms-3 Roboto fst-italic text-white mb-1">Projects</label>
+                    <textarea placeholder="Enter here" class="form-control pField bg-dark rounded-3 text-white"
+                        rows="2"></textarea>
+
+                    <div class="container text-center mt-2" id="pfAddButton">
+                        <button onclick="addNewpField()" class="btn btn-success btn-sm">
+                            Add more
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Work Experience section -->
+                <div class="form-group text-white mt-2" id="Work">
+                    <label for="" class="ms-3 Roboto fst-italic text-white mb-1">Work Experience</label>
+                    <textarea placeholder="Enter here" class="form-control workField bg-dark rounded-3 text-white"
+                        rows="2"></textarea>
+
+                    <div class="container text-center mt-2" id="workAddButton">
+                        <button onclick="addNewField()" class="btn btn-success btn-sm">
+                            Add more
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Academic Qualification section -->
+                <div class="form-group mt-2" id="aq">
+                    <label for="" class="ms-3 Roboto fst-italic text-white mb-1">Academic Qualification</label>
+                    <textarea placeholder="Enter here" class="form-control eqField bg-dark rounded-3 text-white"
+                        rows="2"></textarea>
+
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn btn-success btn-sm">
+                            Add more
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Generate CV Button -->
+        <div class="container text-center mt-5 mb-5">
+            <button onclick="generateCV()" class="btn btn-success btn-lg">
+                Generate CV
+            </button>
+        </div>
+    </div>
+
+    <!-- resume Tamplate -->
+    <div class="container my-4" id="resume-tamplate">
+        <div class="row">
+            <!-- first col -->
+            <div class="col-md-4 background">
+                <img src="./img/user.png" alt="" class="img-fluid rounded-circle p-4 mx-auto d-block" id="imgTemplate"
+                    width="200px">
+                <hr class="text-white">
+                <div class="container">
+                    <!-- contact section -->
+                    <div class="text-white">
+                        <h5>Contacts</h5>
+                        <i class="fa fa-phone d-flex mb-1"><p id="contactT" class="ms-2">+914542454541,+9154564154</p></i>
+                        <i class="fa fa-envelope d-flex mb-1"><p id="emailT" class="ms-2">fagjg@gmail.com</p></i>
+                        <i class="fa fa-linkedin-square d-flex mb-1">
+                            <p class="ms-2"><a id="linkedT" href="#1" class="text-decoration-none text-white">qhfwkghwkh.com</a></p>
+                        </i>
+                        <i class="fa fa-github d-flex mb-1">
+                            <p class="ms-2"><a id="githubT" href="#1" class="text-decoration-none text-white">qhfwkghwkh.com</a></p>
+                        </i>
+                        <i class="fa fa-map-marker d-flex mb-1">
+                            <p id="addressT" class="ms-2">563563/4524152 Sector 35 Noida , INDIA</p>
+                        </i>
+                    </div>
+                    <hr class="text-white">
+
+                    <!-- contact section -->
+                    <div class="text-white">
+                        <h5>Skills</h5>
+                        <ul id="sklT">
+                            <li>html</li>
+                            <li>css</li>
+                            <li>js</li>
+                            <li>react</li>
+                        </ul>
+                    </div>
+                    <hr class="text-white">
+
+                    <!-- contact section -->
+                    <div class="text-white">
+                        <h5>Education</h5>
+                        <ul id="aqT">
+                            <li>Bachelor of Technology,Biju Patnaik University of Technology,
+                                2018 - 2022,CGPA- 8. 1</li>
+                            <li>Bachelor of Technology,Biju Patnaik University of Technology,
+                                2018 - 2022,CGPA- 8. 1</li>
+                            <li>Bachelor of Technology,Biju Patnaik University of Technology,
+                                2018 - 2022,CGPA- 8. 1</li>
+                        </ul>
+                    </div>
+                    <hr class="text-white">
+
+                    <!-- contact section -->
+                    <div class="text-white">
+                        <h5>Language</h5>
+                        <ul id="langT">
+                            <li>hindi</li>
+                            <li>english</li>
+                            <li>odia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Second col -->
+            <div class="col-md-8 bg-light">
+                <div class="mb-5">
+                    <h1 id="nameT" class="text-center mt-4 Bree" style="font-weight: 980">
+                        Birendra Moharana
+                    </h1>
+                    <p id="jtitleT" class="text-center mt-0 fw-bold">Job title</p>
+                </div>
+                <hr class="text-dark">
+
+                <!-- objective card  -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3 class="text-white">Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                            quam quos totam dolorem commodi earum, labore consectetur
+                            excepturi reiciendis, a fugiat porro rem mollitia inventore
+                            eligendi, saepe libero hic aliquam? Iure molestias natus dolore
+                            animi, possimus eius! Atque nesciunt eveniet exercitationem enim
+                            nisi quis. Consequatur aliquam reiciendis officiis laboriosam
+                            numquam?
+                        </p>
+                    </div>
+                </div>
+
+                <!-- projects -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3 class="text-white">Projects</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="projT">
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Odit, ad.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Odit, ad.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Odit, ad.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- work Experience -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3 class="text-white">Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Odit, ad.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Odit, ad.
+                            </li>
+                            <li>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Odit, ad.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container my-3 text-center">
+                    <button onclick="printCV()" class="btn btn-success">Print CV</button>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="./js/Script.js"></script>
+</body>
+
+</html>
